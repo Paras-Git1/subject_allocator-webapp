@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `online_tdl`
+-- Database: `online_notice_board`
 --
 
 -- --------------------------------------------------------
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
@@ -41,14 +42,41 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`) VALUES
 (1, 'admin', 'admin@gmail.com', 'admin@123');
 
 -- --------------------------------------------------------
+
+--
+-- Table structure for table `notice`
+--
+
+CREATE TABLE `notice` (
+  `nid` int(11) NOT NULL,
+  `post_date` date NOT NULL,
+  `to_whom` varchar(100) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notice`
+--
+
+INSERT INTO `notice` (`nid`, `post_date`, `to_whom`, `title`, `message`) VALUES
+(1, '2020-10-13', 'To All', 'Title of Notice 1', 'jkjkjkj'),
+(2, '2020-10-13', 'To Class 12', 'Title of Notice 2', 'This is a testing message for class 12 student.'),
+(3, '2020-10-13', 'To Class 10', 'regarding extra class', 'This is to inform you all that we are going to take extra classes for all. so that we can cover the syllabus that has not been covered yet. bcoz of the covid 12 lockdown.');
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `username` varchar(100) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
+  `class` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -56,8 +84,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `fname`, `lname`, `email`, `password`, `class`) VALUES
-(1, 'Paras', 'Chaudhary', 'cparas777@gmail.com', '12345678', 4),
-(2, 'Hardik', 'Sharma', 'hardiksharma@gmail', 'hardik123', 4),
+(1, 'Paras', 'Chaudhary', 'cparas777@gmail.com', '123456', 4),
+(2, 'Aditya', 'Kalra', 'adityakalra02@gmail.com', 'adi123', 4),
 (3, 'Binod', 'Sharma', 'Binod@gmail.com', 'binod@123', 8);
 
 --
