@@ -2,6 +2,21 @@
   session_start();
   $connection = mysqli_connect("localhost","root","");
   $db = mysqli_select_db($connection,"online_tdl");
+
+  if(isset($_POST['Sign In'])){
+    $query = "insert into users values(null,'$_POST[Username]','$_POST[Password]'";
+    $query_run = mysqli_query($connection,$query);
+    if($query_run){
+      echo "<script>alert('Registration successfully...You may now login.');
+      window.location.href = 'home.php';
+      </script>";
+    }
+    else{
+      echo "<script>alert('Registration failed...try again');
+      window.location.href = 'form.php';
+      </script>";
+    }
+  }
 ?>
 
 <!DOCTYPE html>
