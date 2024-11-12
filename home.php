@@ -817,7 +817,7 @@
               <p class="text">Say you have login issues? or don't know where to start? Or you want to report a bug? <br>
               Now do it all with one simple form.</p>
 
-              <a href="mailto:sharmahardik0256@gmail.com" class="mail">sharmahardik0256@gmail.com 
+              <a href="mailto:sharmahardik0256@gmail.com" class="mail">paraschaudhary10j@gmail.com
                 <i class='bx bx-right-arrow-circle'></i>
               </a>
             </div>
